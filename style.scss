@@ -8,7 +8,7 @@ body {
 }
 
 .input-form {
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Не забывай про БЭМ и внешнюю геометрию*/
 }
 
 .registration__input {
@@ -80,7 +80,7 @@ input::-webkit-input-placeholder {
     margin: 10px 0 0 20px;
 }
 
-.checkbox__custom+label {
+.checkbox__custom+label { /* Опять же, БЭМ*/
     position: relative;
     padding: 0 0 0 60px;
     cursor: pointer;

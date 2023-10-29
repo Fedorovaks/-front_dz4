@@ -26,8 +26,8 @@ function btnSubmit(e) {
     });
 
     if (count == 5) {
-        localStorage.setItem('email', email.value);
-        localStorage.setItem('name', lastName.value);
+        localStorage.setItem('E-mail', email.value);
+        localStorage.setItem('Name', lastName.value);
         localStorage.setItem('Password', pass.value);
         localStorage.setItem('Password confirm', passConfirm.value);
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма регистрации</title>
+  <link rel="stylesheet" href="../style.css" type="text/css" />
+  <link rel="stylesheet" href="../normalize.css" type="text/css" />
+  <script defer src="../script.js"></script>
+</head>
+
+<body>
+  <h1>Регистрация</h1>
+
+  <form novalidate class="registration" action="#">
+    <div class="input-form">
+      <input class="registration__input" type="email" required id="email" name="email" placeholder="E-mail*" value>
+      <div class="error"></div>
+    </div>
+
+    <div class="input-form">
+    <input class="registration__input" id="name" type="text" name="name" required placeholder="ФИО*" value />
+    <div class="error"></div>
+    </div>
+
+    <div class="input-form">
+      <input class="registration__input" type="password" required id="pass" name="pass" required
+        placeholder="Пароль*" value>
+      <div class="error"></div>
+    </div>
+
+    <div class="input-form">
+      <input class="registration__input" type="password" required id="confirm-pass" name="confirm-pass" required
+        placeholder="Подтверждение пароля*" value>
+      <div class="error"></div>
+    </div>
+    <div class="input-form">
+      <input type="checkbox" id="checkbox" name="checkbox" required class="checkbox__custom">
+      <label for="checkbox" class="registration__checkbox">Я подтверждаю что хочу зарегистрироваться
+    </label>
+    <div class="error"></div>
+    </div>
+
+    <input class="btn" type="submit" value="Отправить" />
+
+  </form>
+  <div class="success__text">
+    Вы успешно создали аккаунт
+  </div>
+
+</body>
+
+</html>

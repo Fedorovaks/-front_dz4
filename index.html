@@ -13,11 +13,17 @@
 <body>
   <h1>Регистрация</h1>
 
-  <form novalidate class="registration" action="#">
+<form novalidate class="registration form" action="#">
     <div class="input-form">
       <input class="registration__input" type="email" required id="email" name="email" placeholder="E-mail*" value>
       <div class="error"></div>
     </div>
+
+    <!--Я бы советовал рассмотреть вот такую структуру. Сейчас у тебя registration__input очень сильно завязано на registration, но на деле же, этот инпут может использоваться не только у registration формы -->
+    <!--  <div class="form-control form__control">-->
+    <!--    <input class="form-control__input" type="email" required id="email" name="email" placeholder="E-mail*" value>-->
+    <!--    <div class="error form-control__input"></div>-->
+    <!--  </div>-->
 
     <div class="input-form">
     <input class="registration__input" id="name" type="text" name="name" required placeholder="ФИО*" value />
@@ -25,6 +31,7 @@
     </div>
 
     <div class="input-form">
+        <!-- Как было сказано на созвоне, обычно не юзают html валидацию, вместо этого юзают только Js валидацию, чтобы всё было в одном месте  -->
       <input class="registration__input" type="password" required id="pass" name="pass" required
         placeholder="Пароль*" value>
       <div class="error"></div>

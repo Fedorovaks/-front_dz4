@@ -2,16 +2,12 @@ body {
     text-align: center;
 }
 
-.registration {
+.form {
     display: flex;
     flex-direction: column;
 }
 
-.input-form {
-    margin-bottom: 5px; /* Не забывай про БЭМ и внешнюю геометрию*/
-}
-
-.registration__input {
+.form-control__input {
     width: 20%;
     align-self: center;
     padding: 20px;
@@ -21,13 +17,13 @@ body {
     color: #586870;
 }
 
-.registration__checkbox {
+.form-control__checkbox {
     color: #586870;
     padding: 60px;
     vertical-align: middle;
 }
 
-.btn {
+.btn__send {
     width: 22%;
     margin: auto;
     padding: 20px;
@@ -37,7 +33,13 @@ body {
     margin-top: 15px;
 }
 
-input::-webkit-input-placeholder {
+.form-control__pass-show,
+.form-control__pass-confirm-show {
+    position: absolute;
+    margin: 20px -30px;
+}
+
+.form-control__input::-webkit-input-placeholder {
     color: #586870;
 }
 
@@ -52,17 +54,17 @@ input::-webkit-input-placeholder {
     display: block;
 }
 
-.registration__input:focus {
+.form-control__input:focus {
     caret-color: #007AFF;
     background: #E4F0FF;
     outline: 1px solid #007AFF;
 }
 
-.success .registration__input {
+.success .form-control__input {
     border-color: #09c372;
 }
 
-.error .registration__input {
+.error .form-control__input {
     border-color: #FF3D00;
     background: #FFEFEF;
 }
@@ -80,13 +82,13 @@ input::-webkit-input-placeholder {
     margin: 10px 0 0 20px;
 }
 
-.checkbox__custom+label { /* Опять же, БЭМ*/
+.checkbox__custom+.form-control__checkbox {
     position: relative;
     padding: 0 0 0 60px;
     cursor: pointer;
 }
 
-.checkbox__custom+label:before {
+.checkbox__custom+.form-control__checkbox:before {
     content: '';
     position: absolute;
     top: -4px;
@@ -99,7 +101,7 @@ input::-webkit-input-placeholder {
     transition: .2s;
 }
 
-.checkbox__custom+label:after {
+.checkbox__custom+.form-control__checkbox:after {
     content: '';
     position: absolute;
     top: -2px;
@@ -112,14 +114,14 @@ input::-webkit-input-placeholder {
     transition: .2s;
 }
 
-.checkbox__custom:checked+label:before {
+.checkbox__custom:checked+.form-control__checkbox:before {
     background: #9FD468;
 }
 
-.checkbox__custom:checked+label:after {
+.checkbox__custom:checked+.form-control__checkbox:after {
     left: 26px;
 }
 
-.error label:before {
+.error .form-control__checkbox:before {
     background-color: #FF3D00;
 }

@@ -8,21 +8,73 @@ const successSent = document.querySelector(".success__text");
 const title = document.querySelector("h1");
 const checkbox = document.querySelector("#checkbox");
 
+const hidePassword = () => {
+    const password = document.getElementById("pass");
+    const passwordConfirm = document.getElementById("confirm-pass");
+    if (password.type === 'text') {
+        password.type = 'password';
+    }
+    if (passwordConfirm.type === 'text') {
+        passwordConfirm.type = 'password';
+    }
+};
+
+hidePassword();
+
+const togglePassword = document.querySelector('.form-control__pass-show');
+const togglePasswordConfirm = document.querySelector('.form-control__pass-confirm-show');
+const hidenPass = document.querySelector('.hiden__pass');
+const hidenPassConfirm = document.querySelector('.hiden__pass-confirm');
+
+const showOrHidePassword = (e) => {
+    e.preventDefault();
+    const password = document.getElementById('pass');
+
+    if (password.type === 'password') {
+        password.type = 'text';
+        hidenPass.classList.remove("fa-eye");
+        hidenPass.classList.toggle("fa-low-vision");
+    } else {
+        password.type = 'password';
+        hidenPass.classList.remove("fa-low-vision");
+        hidenPass.classList.toggle("fa-eye");
+    }
+
+};
+
+togglePassword.addEventListener('click', showOrHidePassword);
+
+const showOrHidePasswordConfirm = (e) => {
+    e.preventDefault();
+    const passwordConfirm = document.getElementById("confirm-pass");
+    if (passwordConfirm.type === 'password') {
+        passwordConfirm.type = 'text';
+        hidenPassConfirm.classList.remove("fa-eye");
+        hidenPassConfirm.classList.toggle("fa-low-vision");
+    } else {
+        passwordConfirm.type = 'password';
+        hidenPassConfirm.classList.remove("fa-low-vision");
+        hidenPassConfirm.classList.toggle("fa-eye");
+    }
+};
+
+togglePasswordConfirm.addEventListener('click', showOrHidePasswordConfirm);
+
 btn.addEventListener("click", btnSubmit);
 
 // Выполняем действия при клике ..
 function btnSubmit(e) {
     e.preventDefault();
+
     validate();
 
-    const submitValid = document.querySelectorAll(".input-form");
+    const submitValid = document.querySelectorAll(".form-control");
     var count = 0;
     // переберём выбранные элементы
     submitValid.forEach((el) => {
         if (el.classList.contains("success")) {
             count = count + 1;
         }
-
     });
 
     if (count == 5) {
@@ -119,5 +171,4 @@ const validate = () => {
     }
 
 };
-
 

@@ -7,6 +7,11 @@ body {
     flex-direction: column;
 }
 
+.form-control {
+    color: #586870;
+    vertical-align: middle;
+}
+
 .form-control__input {
     width: 20%;
     align-self: center;
@@ -17,12 +22,6 @@ body {
     color: #586870;
 }
 
-.form-control__checkbox {
-    color: #586870;
-    padding: 60px;
-    vertical-align: middle;
-}
-
 .btn__send {
     width: 22%;
     margin: auto;
@@ -31,6 +30,11 @@ body {
     border-radius: 8px;
     color: #586870;
     margin-top: 15px;
+    background: #9FD468;
+}
+
+.btn__send:hover {
+    background-color: #07e082;
 }
 
 .form-control__pass-show,
@@ -69,59 +73,33 @@ body {
     background: #FFEFEF;
 }
 
-.error {
+.form-control__error {
     color: #FF3D00;
     font-size: 12px;
     padding-top: 10px;
+    display: block;
+}
+
+.checkbox:checked+.checkbox__custom {
+    background-image: url(../images/on.svg);
+    margin-left: -2.2em;
+    width: 2em;
+    height: 2em;
 }
 
 .checkbox__custom {
     position: absolute;
-    z-index: -1;
-    opacity: 0;
-    margin: 10px 0 0 20px;
+    margin-left: -2.2em;
+    margin-top: -0.3em;
+    width: 2em;
+    height: 2em;
+    background-image: url(../images/off.svg);
+
 }
 
-.checkbox__custom+.form-control__checkbox {
-    position: relative;
-    padding: 0 0 0 60px;
-    cursor: pointer;
-}
-
-.checkbox__custom+.form-control__checkbox:before {
-    content: '';
+.checkbox {
     position: absolute;
-    top: -4px;
-    left: 0;
-    width: 50px;
-    height: 26px;
-    border-radius: 13px;
-    background: #CDD1DA;
-    box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2);
-    transition: .2s;
-}
-
-.checkbox__custom+.form-control__checkbox:after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 2px;
-    width: 22px;
-    height: 22px;
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
-    transition: .2s;
-}
-
-.checkbox__custom:checked+.form-control__checkbox:before {
-    background: #9FD468;
-}
-
-.checkbox__custom:checked+.form-control__checkbox:after {
-    left: 26px;
-}
-
-.error .form-control__checkbox:before {
-    background-color: #FF3D00;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
